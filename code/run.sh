@@ -1,3 +1,4 @@
+rm -r /project/train/src_repo/trainval
 cp -r /home/data/1225 /project/train/src_repo/trainval
 cp -r /home/data/599 /project/train/src_repo/trainval
 cp -r /home/data/820 /project/train/src_repo/trainval

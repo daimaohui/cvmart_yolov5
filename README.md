@@ -6,6 +6,14 @@
 
 **更新了用于测试多边形的ji_polygon.py 感谢qian0733提供的代码**
 
+2022-12-02
+
+**增加了run.sh 删除 trainval 防止出现使用编码环境里面数据进行训练**
+
+**修改yaml文件name改成names,使用高版本yolov5训练问题**
+
+**增加yolov6数据处理代码 split_v6.py**
+
 ## 1.报名打榜
 
 ![image-20221109092143080](./img/1.jpg)
@@ -146,3 +154,31 @@ bash /project/train/src_repo/run.sh
 
 ![image-20221109093742004](./img/10.jpg)
 
+## 6 问题
+
+    1.编码环境无法访问github.com
+    
+    		需要将文件下载到本地，然后通过我的文件上传，之后通过wget进行下载
+    
+    2.运行yolov5代码的时候，会遇到下载Arial.ttf失败的问题
+    
+    		使用wget https://extremevision-js-userfile.oss-cn-hangzhou.aliyuncs.com/user-14177-files/d97a419e-2bb4-4822-b398-b37244473a5f/Arial.ttf
+    
+    3.跟着平台的新手教程，测试过程报错
+    
+    	因为平台前不久升级配套问题，使用新手教程的同学们，如果下载的是yolov5最新的代码，那么新手教程里面ji.py 文件运行起来会报错，可以使用https://github.com/daimaohui/cvmart_yolov5/tree/main/code/ji_new.py
+    
+    4.为什么训练完成之后，在编码环境里面找不到训练的模型
+    
+    	训练环境与编码环境是隔离的，只能查模型列表里面查看训练产生的模型
+    
+    5.保存模型大小最大不能超过1G
+    
+    		建议在发起训练的时候，最好将/project/train/models 文件夹下面所有的文件清空
+    
+    6.查看tensorboard
+
+
+​    
+
+utils/logger/__init__.py  `/project/train/tensorboard`![image-20221109093742004](./img/11.jpg)
